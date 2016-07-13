@@ -164,7 +164,7 @@ def zpi_sys_reset_test(zpi, serial_port):
     log.info('Reset the CC2530-ZNP module...')
     
     zpi.sys_reset_req(ResetType.SOFT_RESET)
-    if not sys_reset_indicated.wait(2.000):         #soft reset need ~0.600 seconds
+    if not sys_reset_indicated.wait(5.000):         #soft reset need ~0.600 seconds
         log.error('Start reset indication waiting timeout!')
         zpi.halt()
         serial_port.close()
