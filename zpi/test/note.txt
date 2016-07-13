@@ -579,3 +579,14 @@ zpi.zpi2.SrspTimeoutException
 root@d8:/home/elan/repo/zpi.py/zpi/test#
 
 
+
+root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0 
+[2016-07-14 00:22:56,102] Open serial /dev/ttyUSB0 @ 115200bps.
+[2016-07-14 00:22:56,103] Reset the CC2530-ZNP module...
+[2016-07-14 00:22:56,104] TX packet: 410001
+[2016-07-14 00:22:56,104] TX: fe0141000141
+[2016-07-14 00:22:56,105] TX SREQ/AREQ: SYS_RESET_REQ
+[2016-07-14 00:23:01,106] Start reset indication waiting timeout!
+[2016-07-14 00:23:01,107] Znp thread exited.
+root@d8:/home/elan/repo/zpi.py/zpi/test# 
+
