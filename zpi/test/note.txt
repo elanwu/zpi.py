@@ -1,5 +1,6 @@
 root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0 
 [2016-07-10 00:48:26,869] Open serial /dev/ttyUSB0 @ 115200bps.
+
 [2016-07-10 00:48:26,869] Reset the CC2530-ZNP module...
 [2016-07-10 00:48:26,878] TX packet: 410001
 [2016-07-10 00:48:26,878] TX: fe0141000141
@@ -17,6 +18,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,398] reason: 00
 [2016-07-10 00:48:28,398] System reset successfully.
 [2016-07-10 00:48:28,398] TransportRev=2, ProductId=0, SwRev=2.6, HwRev=3
+
 [2016-07-10 00:48:28,424] Request ZNP system version...
 [2016-07-10 00:48:28,425] TX packet: 2102
 [2016-07-10 00:48:28,425] TX: fe00210223
@@ -32,6 +34,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,442] cmd1: 02
 [2016-07-10 00:48:28,443] maint_rel: 03
 [2016-07-10 00:48:28,460] TransportRev=2, ProductId=0, SwRev=2.6.3
+
 [2016-07-10 00:48:28,460] Read Adc channel 6...
 [2016-07-10 00:48:28,461] TX packet: 210d0603
 [2016-07-10 00:48:28,461] TX: fe02210d06032b
@@ -43,6 +46,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,475] value: 9100
 [2016-07-10 00:48:28,475] cmd1: 0d
 [2016-07-10 00:48:28,480] ADC value = 0x091
+
 [2016-07-10 00:48:28,481] Read Gpio pins...
 [2016-07-10 00:48:28,482] TX packet: 210e0500
 [2016-07-10 00:48:28,482] TX: fe02210e050028
@@ -54,6 +58,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,494] value: 0f
 [2016-07-10 00:48:28,494] cmd1: 0e
 [2016-07-10 00:48:28,502] GPIO value = 0x0F
+
 [2016-07-10 00:48:28,503] Get a random value...
 [2016-07-10 00:48:28,503] TX packet: 210c
 [2016-07-10 00:48:28,503] TX: fe00210c2d
@@ -65,6 +70,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,519] value: 7dac
 [2016-07-10 00:48:28,519] cmd1: 0c
 [2016-07-10 00:48:28,521] Random value = 0xAC7D
+
 [2016-07-10 00:48:28,521] Read configuration parameters (ZCD_NV_XXX)...
 [2016-07-10 00:48:28,521] TX packet: 260487
 [2016-07-10 00:48:28,522] TX: fe01260487a4
@@ -78,6 +84,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,550] cmd1: 04
 [2016-07-10 00:48:28,550] len: 01
 [2016-07-10 00:48:28,551] value: 00
+
 [2016-07-10 00:48:28,558] TX packet: 260483
 [2016-07-10 00:48:28,558] TX: fe01260483a0
 [2016-07-10 00:48:28,559] TX SREQ/AREQ: ZB_READ_CONFIGURATION
@@ -90,6 +97,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,575] cmd1: 04
 [2016-07-10 00:48:28,575] len: 02
 [2016-07-10 00:48:28,575] value: aa55
+
 [2016-07-10 00:48:28,578] TX packet: 260484
 [2016-07-10 00:48:28,578] TX: fe01260484a7
 [2016-07-10 00:48:28,579] TX SREQ/AREQ: ZB_READ_CONFIGURATION
@@ -105,6 +113,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,617] LOGICAL_TYPE = Coordinator, PANID = 0x55AA, CHANLIST = 0x00F8FF07
 [2016-07-10 00:48:28,618] Write configuration parameters (ZCD_NV_XXX)...
 [2016-07-10 00:48:28,618] LOGICAL_TYPE = Coordinator, PANID = 0xFFFF, CHANLIST = 0x00001000
+
 [2016-07-10 00:48:28,618] TX packet: 2605870100
 [2016-07-10 00:48:28,619] TX: fe032605870100a6
 [2016-07-10 00:48:28,619] TX SREQ/AREQ: ZB_WRITE_CONFIGURATION
@@ -114,6 +123,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,636] status: 00
 [2016-07-10 00:48:28,636] cmd0: 66
 [2016-07-10 00:48:28,636] cmd1: 05
+
 [2016-07-10 00:48:28,639] TX packet: 26058302ffff
 [2016-07-10 00:48:28,639] TX: fe0426058302ffffa6
 [2016-07-10 00:48:28,640] TX SREQ/AREQ: ZB_WRITE_CONFIGURATION
@@ -123,6 +133,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,656] status: 00
 [2016-07-10 00:48:28,656] cmd0: 66
 [2016-07-10 00:48:28,656] cmd1: 05
+
 [2016-07-10 00:48:28,659] TX packet: 2605840400100000
 [2016-07-10 00:48:28,660] TX: fe062605840400100000b5
 [2016-07-10 00:48:28,660] TX SREQ/AREQ: ZB_WRITE_CONFIGURATION
@@ -132,6 +143,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,687] status: 00
 [2016-07-10 00:48:28,687] cmd0: 66
 [2016-07-10 00:48:28,687] cmd1: 05
+
 [2016-07-10 00:48:28,694] TX packet: 2605030100
 [2016-07-10 00:48:28,694] TX: fe03260503010022
 [2016-07-10 00:48:28,695] TX SREQ/AREQ: ZB_WRITE_CONFIGURATION
@@ -144,6 +156,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,729] SAPI application register...
 [2016-07-10 00:48:28,729] ep=1, profile_id=0x0104, device_id=0x0005, device_ver=0x0000
 [2016-07-10 00:48:28,729] in_commands:[], out_commands:[]
+
 [2016-07-10 00:48:28,730] TX packet: 260a010401050000000000
 [2016-07-10 00:48:28,730] TX: fe09260a01040105000000000024
 [2016-07-10 00:48:28,731] TX SREQ/AREQ: ZB_APP_REGISTER_REQUEST
@@ -154,6 +167,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python zpi_test.py /dev/ttyUSB0
 [2016-07-10 00:48:28,744] cmd0: 66
 [2016-07-10 00:48:28,744] cmd1: 0a
 [2016-07-10 00:48:28,751] Done!
+
 [2016-07-10 00:48:28,751] SAPI start request...
 [2016-07-10 00:48:28,751] TX packet: 2600
 [2016-07-10 00:48:28,752] TX: fe00260026
@@ -190,6 +204,7 @@ cmd1: c0
 [2016-07-10 00:48:30,620] cmd0: 46
 [2016-07-10 00:48:30,620] cmd1: 80
 [2016-07-10 00:48:30,636] confirmed!
+
 [2016-07-10 00:48:30,636] Get device information...
 [2016-07-10 00:48:30,637] TX packet: 260600
 [2016-07-10 00:48:30,637] TX: fe0126060021
@@ -201,6 +216,7 @@ cmd1: c0
 [2016-07-10 00:48:30,649] cmd0: 66
 [2016-07-10 00:48:30,649] param: 00
 [2016-07-10 00:48:30,649] cmd1: 06
+
 [2016-07-10 00:48:30,649] TX packet: 260605
 [2016-07-10 00:48:30,650] TX: fe0126060524
 [2016-07-10 00:48:30,650] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -211,6 +227,7 @@ cmd1: c0
 [2016-07-10 00:48:30,664] cmd0: 66
 [2016-07-10 00:48:30,664] param: 05
 [2016-07-10 00:48:30,664] cmd1: 06
+
 [2016-07-10 00:48:30,668] TX packet: 260606
 [2016-07-10 00:48:30,668] TX: fe0126060627
 [2016-07-10 00:48:30,668] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -221,6 +238,7 @@ cmd1: c0
 [2016-07-10 00:48:30,684] cmd0: 66
 [2016-07-10 00:48:30,684] param: 06
 [2016-07-10 00:48:30,684] cmd1: 06
+
 [2016-07-10 00:48:30,686] TX packet: 260607
 [2016-07-10 00:48:30,687] TX: fe0126060726
 [2016-07-10 00:48:30,687] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -231,6 +249,7 @@ cmd1: c0
 [2016-07-10 00:48:30,704] cmd0: 66
 [2016-07-10 00:48:30,704] param: 07
 [2016-07-10 00:48:30,704] cmd1: 06
+
 [2016-07-10 00:48:30,720] TX packet: 260602
 [2016-07-10 00:48:30,721] TX: fe0126060223
 [2016-07-10 00:48:30,721] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -241,6 +260,7 @@ cmd1: c0
 [2016-07-10 00:48:30,735] cmd0: 66
 [2016-07-10 00:48:30,735] param: 02
 [2016-07-10 00:48:30,736] cmd1: 06
+
 [2016-07-10 00:48:30,738] TX packet: 260601
 [2016-07-10 00:48:30,739] TX: fe0126060120
 [2016-07-10 00:48:30,739] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -254,6 +274,7 @@ cmd1: c0
 [2016-07-10 00:48:30,758] Device State: DEV_ZB_COORD
 [2016-07-10 00:48:30,759] Channel=12, PanID=0x3188, PanIdExt=0xDDDDDDDDDDDDDDDD,
 [2016-07-10 00:48:30,759] NwkAddr=0x0000, IeeeAddr=0x00124B000722B058
+
 [2016-07-10 00:48:30,759] APS groups test...
 [2016-07-10 00:48:30,759] add group...
 [2016-07-10 00:48:30,759] Add 2 groups for endpoint 1
@@ -263,6 +284,7 @@ cmd1: c0
 [2016-07-10 00:48:30,775] RX: fe036000012f004d
 [2016-07-10 00:48:30,784] Znp:'Unrecognized response packet with cmd: 6000'
 [2016-07-10 00:48:31,261] APS Group test failure!
+
 [2016-07-10 00:48:32,263] Discovery network devices...
 [2016-07-10 00:48:32,263] TX packet: 27480006
 [2016-07-10 00:48:32,263] TX: fe02274800066b
@@ -278,24 +300,27 @@ cmd1: c0
 [2016-07-10 00:48:32,283] Bind device test...
 [2016-07-10 00:48:32,284] No test executed.
 [2016-07-10 00:48:32,284] ZB_SEND_DATA_REQUEST periodically:
-^[[6~^[[6~^[[6~^[[5~
-^[[6~^[[6~^[[6~^[[5~^[[6~[2016-07-10 01:01:50,895] RX: fe0c45cab265f2666a07004b12000000f4
+
+[2016-07-10 01:01:50,895] RX: fe0c45cab265f2666a07004b12000000f4
 [2016-07-10 01:01:50,897] Znp:'Unrecognized response packet with cmd: 45ca'
 
 
 [2016-07-10 01:02:33,460] RX: fe0c45cab265f2666a07004b12000000f4
 [2016-07-10 01:02:33,461] Znp:'Unrecognized response packet with cmd: 45ca'
-^C[2016-07-10 01:55:30,823] Key pressed, ready to exit...
+[2016-07-10 01:55:30,823] Key pressed, ready to exit...
 [2016-07-10 01:55:30,825] Kill the Zpi thread...
 [2016-07-10 01:55:30,825] Znp thread exited.
 [2016-07-10 01:55:30,869] Test exited.
-root@d8:/home/elan/repo/zpi.py/zpi/test# exit
 
+
+
+root@d8:/home/elan/repo/zpi.py/zpi/test# exit
 
 
 
 root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0 
 [2016-07-14 00:15:48,163] Open serial /dev/ttyUSB0 @ 115200bps.
+
 [2016-07-14 00:15:48,164] Reset the CC2530-ZNP module...
 [2016-07-14 00:15:48,172] TX packet: 410001
 [2016-07-14 00:15:48,173] TX: fe0141000141
@@ -313,6 +338,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:49,956] reason: 00
 [2016-07-14 00:15:49,956] System reset successfully.
 [2016-07-14 00:15:49,957] TransportRev=2, ProductId=0, SwRev=2.6, HwRev=3
+
 [2016-07-14 00:15:50,006] Request ZNP system version...
 [2016-07-14 00:15:50,007] TX packet: 2102
 [2016-07-14 00:15:50,007] TX: fe00210223
@@ -328,6 +354,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,025] cmd1: 02
 [2016-07-14 00:15:50,025] maint_rel: 03
 [2016-07-14 00:15:50,025] TransportRev=2, ProductId=0, SwRev=2.6.3
+
 [2016-07-14 00:15:50,026] Read Adc channel 6...
 [2016-07-14 00:15:50,026] TX packet: 210d0603
 [2016-07-14 00:15:50,026] TX: fe02210d06032b
@@ -339,6 +366,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,045] value: 9400
 [2016-07-14 00:15:50,045] cmd1: 0d
 [2016-07-14 00:15:50,061] ADC value = 0x094
+
 [2016-07-14 00:15:50,062] Read Gpio pins...
 [2016-07-14 00:15:50,062] TX packet: 210e0500
 [2016-07-14 00:15:50,062] TX: fe02210e050028
@@ -350,6 +378,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,080] value: 0f
 [2016-07-14 00:15:50,083] cmd1: 0e
 [2016-07-14 00:15:50,097] GPIO value = 0x0F
+
 [2016-07-14 00:15:50,098] Get a random value...
 [2016-07-14 00:15:50,098] TX packet: 210c
 [2016-07-14 00:15:50,099] TX: fe00210c2d
@@ -361,6 +390,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,120] value: 0ea3
 [2016-07-14 00:15:50,120] cmd1: 0c
 [2016-07-14 00:15:50,134] Random value = 0xA30E
+
 [2016-07-14 00:15:50,134] Read configuration parameters (ZCD_NV_XXX)...
 [2016-07-14 00:15:50,134] TX packet: 260487
 [2016-07-14 00:15:50,135] TX: fe01260487a4
@@ -374,6 +404,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,169] cmd1: 04
 [2016-07-14 00:15:50,169] len: 01
 [2016-07-14 00:15:50,170] value: 00
+
 [2016-07-14 00:15:50,202] TX packet: 260483
 [2016-07-14 00:15:50,203] TX: fe01260483a0
 [2016-07-14 00:15:50,203] TX SREQ/AREQ: ZB_READ_CONFIGURATION
@@ -386,6 +417,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,247] cmd1: 04
 [2016-07-14 00:15:50,247] len: 02
 [2016-07-14 00:15:50,248] value: ffff
+
 [2016-07-14 00:15:50,269] TX packet: 260484
 [2016-07-14 00:15:50,270] TX: fe01260484a7
 [2016-07-14 00:15:50,270] TX SREQ/AREQ: ZB_READ_CONFIGURATION
@@ -401,6 +433,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,337] LOGICAL_TYPE = Coordinator, PANID = 0xFFFF, CHANLIST = 0x00001000
 [2016-07-14 00:15:50,337] Write configuration parameters (ZCD_NV_XXX)...
 [2016-07-14 00:15:50,337] LOGICAL_TYPE = Coordinator, PANID = 0xFFFF, CHANLIST = 0x00001000
+
 [2016-07-14 00:15:50,338] TX packet: 2605870100
 [2016-07-14 00:15:50,338] TX: fe032605870100a6
 [2016-07-14 00:15:50,338] TX SREQ/AREQ: ZB_WRITE_CONFIGURATION
@@ -410,6 +443,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,354] status: 00
 [2016-07-14 00:15:50,354] cmd0: 66
 [2016-07-14 00:15:50,354] cmd1: 05
+
 [2016-07-14 00:15:50,354] TX packet: 26058302ffff
 [2016-07-14 00:15:50,355] TX: fe0426058302ffffa6
 [2016-07-14 00:15:50,355] TX SREQ/AREQ: ZB_WRITE_CONFIGURATION
@@ -419,6 +453,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,377] status: 00
 [2016-07-14 00:15:50,378] cmd0: 66
 [2016-07-14 00:15:50,378] cmd1: 05
+
 [2016-07-14 00:15:50,389] TX packet: 2605840400100000
 [2016-07-14 00:15:50,389] TX: fe062605840400100000b5
 [2016-07-14 00:15:50,389] TX SREQ/AREQ: ZB_WRITE_CONFIGURATION
@@ -428,6 +463,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,413] status: 00
 [2016-07-14 00:15:50,414] cmd0: 66
 [2016-07-14 00:15:50,414] cmd1: 05
+
 [2016-07-14 00:15:50,423] TX packet: 2605030100
 [2016-07-14 00:15:50,424] TX: fe03260503010022
 [2016-07-14 00:15:50,424] TX SREQ/AREQ: ZB_WRITE_CONFIGURATION
@@ -440,6 +476,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,457] SAPI application register...
 [2016-07-14 00:15:50,458] ep=1, profile_id=0x0104, device_id=0x0005, device_ver=0x0000
 [2016-07-14 00:15:50,458] in_commands:[], out_commands:[]
+
 [2016-07-14 00:15:50,459] TX packet: 260a010401050000000000
 [2016-07-14 00:15:50,459] TX: fe09260a01040105000000000024
 [2016-07-14 00:15:50,459] TX SREQ/AREQ: ZB_APP_REGISTER_REQUEST
@@ -450,6 +487,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:50,474] cmd0: 66
 [2016-07-14 00:15:50,475] cmd1: 0a
 [2016-07-14 00:15:50,477] Done!
+
 [2016-07-14 00:15:50,477] SAPI start request...
 [2016-07-14 00:15:50,478] TX packet: 2600
 [2016-07-14 00:15:50,478] TX: fe00260026
@@ -459,6 +497,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:15:51,486] rx_data: {'cmd0': 'f', 'id': 'ZB_START_REQUEST_SRSP', 'cmd1': '\x00'}
 [2016-07-14 00:15:51,486] cmd0: 66
 [2016-07-14 00:15:51,487] cmd1: 00
+
 [2016-07-14 00:15:51,493] RX: fe0145c0098d
 [2016-07-14 00:15:51,494] RX SRSP/AREQ: ZDO_STATE_CHANGE_IND
 [2016-07-14 00:15:51,494] rx_data: {'state': '\t', 'cmd0': 'E', 'id': 'ZDO_STATE_CHANGE_IND', 'cmd1': '\xc0'}
@@ -469,6 +508,7 @@ AREQ RX: ZDO_STATE_CHANGE_IND
 state: 09
 cmd0: 45
 cmd1: c0
+
 [2016-07-14 00:15:51,497] RX: fe01468000c7
 [2016-07-14 00:15:51,498] RX SRSP/AREQ: ZB_START_CONFIRM
 [2016-07-14 00:15:51,498] rx_data: {'status': '\x00', 'cmd0': 'F', 'id': 'ZB_START_CONFIRM', 'cmd1': '\x80'}
@@ -476,6 +516,7 @@ cmd1: c0
 [2016-07-14 00:15:51,499] cmd0: 46
 [2016-07-14 00:15:51,499] cmd1: 80
 [2016-07-14 00:15:51,980] confirmed!
+
 [2016-07-14 00:15:51,981] Get device information...
 [2016-07-14 00:15:51,981] TX packet: 260600
 [2016-07-14 00:15:51,982] TX: fe0126060021
@@ -487,6 +528,7 @@ cmd1: c0
 [2016-07-14 00:15:52,003] cmd0: 66
 [2016-07-14 00:15:52,005] param: 00
 [2016-07-14 00:15:52,009] cmd1: 06
+
 [2016-07-14 00:15:52,015] TX packet: 260605
 [2016-07-14 00:15:52,015] TX: fe0126060524
 [2016-07-14 00:15:52,016] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -497,6 +539,7 @@ cmd1: c0
 [2016-07-14 00:15:52,032] cmd0: 66
 [2016-07-14 00:15:52,033] param: 05
 [2016-07-14 00:15:52,033] cmd1: 06
+
 [2016-07-14 00:15:52,039] TX packet: 260606
 [2016-07-14 00:15:52,039] TX: fe0126060627
 [2016-07-14 00:15:52,040] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -507,6 +550,7 @@ cmd1: c0
 [2016-07-14 00:15:52,054] cmd0: 66
 [2016-07-14 00:15:52,054] param: 06
 [2016-07-14 00:15:52,055] cmd1: 06
+
 [2016-07-14 00:15:52,056] TX packet: 260607
 [2016-07-14 00:15:52,057] TX: fe0126060726
 [2016-07-14 00:15:52,057] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -517,6 +561,7 @@ cmd1: c0
 [2016-07-14 00:15:52,074] cmd0: 66
 [2016-07-14 00:15:52,075] param: 07
 [2016-07-14 00:15:52,075] cmd1: 06
+
 [2016-07-14 00:15:52,075] TX packet: 260602
 [2016-07-14 00:15:52,076] TX: fe0126060223
 [2016-07-14 00:15:52,076] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -527,6 +572,7 @@ cmd1: c0
 [2016-07-14 00:15:52,098] cmd0: 66
 [2016-07-14 00:15:52,099] param: 02
 [2016-07-14 00:15:52,099] cmd1: 06
+
 [2016-07-14 00:15:52,110] TX packet: 260601
 [2016-07-14 00:15:52,110] TX: fe0126060120
 [2016-07-14 00:15:52,110] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -540,6 +586,7 @@ cmd1: c0
 [2016-07-14 00:15:52,145] Device State: DEV_ZB_COORD
 [2016-07-14 00:15:52,147] Channel=12, PanID=0x3188, PanIdExt=0xDDDDDDDDDDDDDDDD,
 [2016-07-14 00:15:52,148] NwkAddr=0x0000, IeeeAddr=0x00124B000722B058
+
 [2016-07-14 00:15:52,148] APS groups test...
 [2016-07-14 00:15:52,148] add group...
 [2016-07-14 00:15:52,149] Add 2 groups for endpoint 1
@@ -549,6 +596,7 @@ cmd1: c0
 [2016-07-14 00:15:52,169] RX: fe036000012f004d
 [2016-07-14 00:15:52,170] Znp:'Unrecognized response packet with cmd: 6000'
 [2016-07-14 00:15:52,653] APS Group test failure!
+
 [2016-07-14 00:15:53,655] Discovery network devices...
 [2016-07-14 00:15:53,655] TX packet: 27480006
 [2016-07-14 00:15:53,656] TX: fe02274800066b
@@ -559,6 +607,7 @@ cmd1: c0
 [2016-07-14 00:15:53,674] count: 0100
 [2016-07-14 00:15:53,674] cmd0: 67
 [2016-07-14 00:15:53,676] cmd1: 48
+
 [2016-07-14 00:15:53,691] TX packet: 274900
 [2016-07-14 00:15:53,692] TX: fe012749006f
 [2016-07-14 00:15:53,692] TX SREQ/AREQ: UTIL_ASSOC_FIND_DEVICE
