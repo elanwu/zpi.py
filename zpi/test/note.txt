@@ -528,7 +528,7 @@ cmd1: c0
 [2016-07-14 00:15:52,003] cmd0: 66
 [2016-07-14 00:15:52,005] param: 00
 [2016-07-14 00:15:52,009] cmd1: 06
-
+-
 [2016-07-14 00:15:52,015] TX packet: 260605
 [2016-07-14 00:15:52,015] TX: fe0126060524
 [2016-07-14 00:15:52,016] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -539,7 +539,7 @@ cmd1: c0
 [2016-07-14 00:15:52,032] cmd0: 66
 [2016-07-14 00:15:52,033] param: 05
 [2016-07-14 00:15:52,033] cmd1: 06
-
+-
 [2016-07-14 00:15:52,039] TX packet: 260606
 [2016-07-14 00:15:52,039] TX: fe0126060627
 [2016-07-14 00:15:52,040] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -550,7 +550,7 @@ cmd1: c0
 [2016-07-14 00:15:52,054] cmd0: 66
 [2016-07-14 00:15:52,054] param: 06
 [2016-07-14 00:15:52,055] cmd1: 06
-
+-
 [2016-07-14 00:15:52,056] TX packet: 260607
 [2016-07-14 00:15:52,057] TX: fe0126060726
 [2016-07-14 00:15:52,057] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -561,7 +561,7 @@ cmd1: c0
 [2016-07-14 00:15:52,074] cmd0: 66
 [2016-07-14 00:15:52,075] param: 07
 [2016-07-14 00:15:52,075] cmd1: 06
-
+-
 [2016-07-14 00:15:52,075] TX packet: 260602
 [2016-07-14 00:15:52,076] TX: fe0126060223
 [2016-07-14 00:15:52,076] TX SREQ/AREQ: ZB_GET_DEVICE_INFO
@@ -597,6 +597,17 @@ cmd1: c0
 [2016-07-14 00:15:52,170] Znp:'Unrecognized response packet with cmd: 6000'
 [2016-07-14 00:15:52,653] APS Group test failure!
 
+
+# CC2530ZNP_Interface_Specification.pdf / p15: 
+# 
+# When the ZNP cannot recognize an SREQ command from the host processor, the following
+# SRSP is returned:
+# SRSP:
+# 
+# |      1     |     1     |     1     |    1    |   1   |   1  |
+# Length = 0x03 Cmd0 = 0x60 Cmd1 = 0x00 ErrorCode ReqCmd0 ReqCmd1
+
+
 [2016-07-14 00:15:53,655] Discovery network devices...
 [2016-07-14 00:15:53,655] TX packet: 27480006
 [2016-07-14 00:15:53,656] TX: fe02274800066b
@@ -613,6 +624,11 @@ cmd1: c0
 [2016-07-14 00:15:53,692] TX SREQ/AREQ: UTIL_ASSOC_FIND_DEVICE
 [2016-07-14 00:15:53,708] RX: fe1c6749b2650000010800000201aa0000000000eb00df06001daf05e11d7adf99
 [2016-07-14 00:15:53,709] Data: 6749b2650000010800000201aa0000000000eb00df06001daf05e11d7adf
+
+# 6749b2650000010800000201aa0000000000eb00df06001daf05e11d7adf
+# 6749   b265  0000    01         08        00      00  02        01     aa     00          00000000  eb00       df06001daf05e11d7adf
+# cmd0/1 sAddr addrIdx nodeRltion devStatus assoCnt age txCounter txCost rxl_qi inKeySeqNum inFrmCntr txFilure   10-bytes
+
 [2016-07-14 00:15:53,709] Znp:Response packet is longer than expected.Expected: 20, got: 30 bytes. 
 Traceback (most recent call last):
   File "./zpi_test.py", line 991, in <module>
