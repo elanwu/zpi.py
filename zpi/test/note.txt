@@ -626,8 +626,8 @@ cmd1: c0
 [2016-07-14 00:15:53,709] Data: 6749b2650000010800000201aa0000000000eb00df06001daf05e11d7adf
 
 # 6749b2650000010800000201aa0000000000eb00df06001daf05e11d7adf
-# 6749   b265  0000    01         08        00      00  02        01     aa     00          00000000  eb00       df06001daf05e11d7adf
-# cmd0/1 sAddr addrIdx nodeRltion devStatus assoCnt age txCounter txCost rxl_qi inKeySeqNum inFrmCntr txFilure   10-bytes
+# 6749   b265  0000    01         08        00      00  02        01     aa     00          00000000  eb00       df06001daf05e11d7adf (99)
+# cmd0/1 sAddr addrIdx nodeRltion devStatus assoCnt age txCounter txCost rxLqi  inKeySeqNum inFrmCntr txFilure   10-bytes
 
 [2016-07-14 00:15:53,709] Znp:Response packet is longer than expected.Expected: 20, got: 30 bytes. 
 Traceback (most recent call last):
