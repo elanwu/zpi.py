@@ -68,7 +68,7 @@ sapi_apps = {
     'coordinator':{
         'device_id': 0x0005, #HA: Configuration tool
         'device_ver': 0x00,  #Mnfr define     
-        'in_commands':[0x0001],
+        'in_commands':[],
         'out_commands':[],   
         },
     'router':{
@@ -440,7 +440,7 @@ def zpi_af_register_test(zpi):
     elif device_type == 'switch':
         _app = SAMPLE_SWITCH
     else:
-        _app = SAMPLE_ZBGW 
+        #app = SAMPLE_ZBGW 
         pass
         
     if _app is not None:
