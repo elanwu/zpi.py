@@ -635,6 +635,40 @@ cmd1: c0
 # 6749   b265  0000    01         08        00      00  {02   01   aa    00  00000000  eb00}  {df        06001daf}   05e11d7a df
 # cmd0/1 sAddr addrIdx nodeRltion devStatus assoCnt age {tCnt tCst rxLqi KSN secFrmCnt tFail} {endDevCfg devTimeout} tmotCnt  b_keepaliveRcv;
 #                                                       {associated_devices_t}                {aging_end_device_t}
+/*********************************************************************
+ * CONSTANTS
+ */
+
+#define NVINDEX_NOT_FOUND   0xFFFF
+#define NVINDEX_THIS_DEVICE 0xFFFE
+
+#define ASSOC_INDEX_NOT_FOUND 0xFFFF
+
+// Bitmap of associated devices status fields
+#define DEV_LINK_STATUS     0x01 // link is in-active ?
+#define DEV_LINK_REPAIR     0x02 // link repair in progress ?
+#define DEV_SEC_INIT_STATUS 0x04 // security init
+#define DEV_SEC_AUTH_STATUS 0x08 // security authenticated
+
+#define DEV_SECURED_JOIN    0x20 // Device joined secure
+#define DEV_REJOIN_STATUS   0x40 // Device rejoined
+#define DEV_HIGH_SEC_STATUS 0x80 // Device joined as High Security
+
+// Node Relations
+#define PARENT              0
+#define CHILD_RFD           1
+#define CHILD_RFD_RX_IDLE   2
+#define CHILD_FFD           3
+#define CHILD_FFD_RX_IDLE   4
+#define NEIGHBOR            5
+#define OTHER               6
+#define NOTUSED             0xFF
+
+// Child Table age out values
+#define TIMEOUT_DONT_AGE_OUT    0xFFFFFFFE
+#define TIMEOUT_NOT_USED        0xFFFFFFFF
+
+
 
 [2016-07-14 00:15:53,709] Znp:Response packet is longer than expected.Expected: 20, got: 30 bytes. 
 Traceback (most recent call last):
