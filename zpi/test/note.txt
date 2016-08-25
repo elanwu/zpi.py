@@ -626,8 +626,15 @@ cmd1: c0
 [2016-07-14 00:15:53,709] Data: 6749b2650000010800000201aa0000000000eb00df06001daf05e11d7adf
 
 # 6749b2650000010800000201aa0000000000eb00df06001daf05e11d7adf
+# !wrong parse (refefenced from pdf documents)
 # 6749   b265  0000    01         08        00      00  02        01     aa     00          00000000  eb00       df06001daf05e11d7adf (99)
 # cmd0/1 sAddr addrIdx nodeRltion devStatus assoCnt age txCounter txCost rxLqi  inKeySeqNum inFrmCntr txFilure   10-bytes
+
+# 6749b2650000010800000201aa0000000000eb00df06001daf05e11d7adf
+# right parse (according from znp source code)
+# 6749   b265  0000    01         08        00      00  {02   01   aa    00  00000000  eb00}  {df        06001daf}   05e11d7a df
+# cmd0/1 sAddr addrIdx nodeRltion devStatus assoCnt age {tCnt tCst rxLqi KSN secFrmCnt tFail} {endDevCfg devTimeout} tmotCnt  b_keepaliveRcv;
+#                                                       {associated_devices_t}                {aging_end_device_t}
 
 [2016-07-14 00:15:53,709] Znp:Response packet is longer than expected.Expected: 20, got: 30 bytes. 
 Traceback (most recent call last):
@@ -654,4 +661,93 @@ root@d8:/home/elan/repo/zpi.py/zpi/test# python ./zpi_test.py /dev/ttyUSB0
 [2016-07-14 00:23:01,106] Start reset indication waiting timeout!
 [2016-07-14 00:23:01,107] Znp thread exited.
 root@d8:/home/elan/repo/zpi.py/zpi/test# 
+
+
+
+2016-08-25 09:27:14:  CMD, IND, 45CA
+	if you encount cmd 0x45CA without discription in document "CC2530ZNP_Interface_Specifacation.pdf":
+	https://e2e.ti.com/support/wireless_connectivity/zigbee_6lowpan_802-15-4_mac/f/158/t/406701
+	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	0x0c 0x45 0xCA ...
+
+	Where Cmd0=0x45, Cmd1 = 0xCA, I've found in source file "MT.h" that Cmd1 = 0xCA is MT_ZDO_TC_DEVICE_IND
+
+	But I failed to find the MT_ZDO_TC_DEVICE_IND in "Z-Stack Monitor and Test API.pdf " (SWRA198) and in "ZigBee-Pro Network Processor.pdf" (SWRA312)
+	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	
+	MT_ZDO_TC_DEVICE_IND,      
+	This command handles the Trust Cented device indication
+	AREQ:
+	Length = 0x0C, Cmd0 = 0x45, Cmd1 = 0xCA;
+	|  2 Bytes: Source Nwk Addrs      |     8 Bytes: Src ieee address     |     2 Bytes: Parent nwk addrs  |
+
+	Currently we don't have this command in our documents but here is the description:
+	This command will be received by the ZNP coordinator as an indication that a new device has joined the network. 
+	On your ZAP you don't need to take any action related to this command it will all depend if you want to use this information in your application. If you have no use for it then do nothing when this command is received. 
+
+	https://e2e.ti.com/support/wireless_connectivity/zigbee_6lowpan_802-15-4_mac/f/158/p/346412/1571117
+	https://e2e.ti.com/support/wireless_connectivity/zigbee_6lowpan_802-15-4_mac/f/158/p/518759/1887631
+
+
+
+2016-08-25 10:06:03: CMD, IND, 6749
+	Z-Stack Home 1.2.2a.44539/Components/stack/nwk/AssocList.h
+	101 typedef struct
+	102 {
+	103   uint16 shortAddr;                 // Short address of associated device
+	104   uint16 addrIdx;                   // Index from the address manager
+	105   byte nodeRelation;
+	106   byte devStatus;                   // bitmap of various status values
+	107   byte assocCnt;
+	108   byte age;
+	109   linkInfo_t linkInfo;
+	110   aging_end_device_t endDev;
+	111   uint32 timeoutCounter;
+	112   bool keepaliveRcv;
+	113 } associated_devices_t;
+
+		Components/osal/include/ZComDef.h
+		399 typedef struct
+		400 {
+		401   uint8  txCounter;    // Counter of transmission success/failures
+		402   uint8  txCost;       // Average of sending rssi values if link staus is enabled
+		403                        // i.e. NWK_LINK_STATUS_PERIOD is defined as non zero
+		404   uint8  rxLqi;        // average of received rssi values
+		405                        // needs to be converted to link cost (1-7) before used
+		406   uint8  inKeySeqNum;  // security key sequence number
+		407   uint32 inFrmCntr;    // security frame counter..
+		408   uint16 txFailure;    // higher values indicate more failures
+		409 } linkInfo_t;
+
+		Components/stack/nwk/AssocList.h
+		 95 typedef struct
+		 96 { 
+		 97   uint8 endDevCfg;
+		 98   uint32 deviceTimeout;
+		 99 } aging_end_device_t;
+
+
+
+	Components/mt/MT_UTIL.c
+	 311   case MT_UTIL_ASSOC_FIND_DEVICE:
+	 312     MT_UtilAssocFindDevice(pBuf);Go
+	....
+	1590 /***************************************************************************************************
+	1591  * @fn      MT_UtilAssocFindDevice
+	1592  *
+	1593  * @brief   Get an associated device by index.
+	1594  *
+	1595  * @param   pBuf - pointer to the received buffer
+	1596  *
+	1597  * @return  void
+	1598  ***************************************************************************************************/
+	1599 static void MT_UtilAssocFindDevice(uint8 *pBuf)
+	1600 {
+	1601   uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+	1602   uint8 buf[sizeof(associated_devices_t)];
+	1603 
+	1604   packDev_t(buf, AssocFindDevice(pBuf[MT_RPC_FRAME_HDR_SZ]));
+	1605   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId,
+	1606                                        sizeof(associated_devices_t), buf);
+	1607 }
+
 
