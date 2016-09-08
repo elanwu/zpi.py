@@ -50,6 +50,15 @@ SAMPLE_LIGHT = {
     'out_clusters': [],            
     } 
 
+SAMPLE_ZBGW = {
+    'name': 'zigbee gateway sample',
+    'endpoint': 01,
+    'profile_id': ZCL_HA_PROFILE_ID,
+    'device_id': 0x0005, #HA: Configuration tool
+    'device_ver': 0x00,  #Mnfr define    
+    'in_clusters': [0x0001],
+    'out_clusters': [],
+    } 
 
 
 sapi_apps = {
@@ -59,7 +68,7 @@ sapi_apps = {
     'coordinator':{
         'device_id': 0x0005, #HA: Configuration tool
         'device_ver': 0x00,  #Mnfr define     
-        'in_commands':[],
+        'in_commands':[0x0001],
         'out_commands':[],   
         },
     'router':{
@@ -431,6 +440,7 @@ def zpi_af_register_test(zpi):
     elif device_type == 'switch':
         _app = SAMPLE_SWITCH
     else:
+        _app = SAMPLE_ZBGW 
         pass
         
     if _app is not None:
@@ -930,8 +940,10 @@ def zpi_test_all():
     
     zpi_zb_read_config_test(zpi)   
     zpi_zb_write_config_test(zpi, logical_type)
+
     zpi_zb_app_reg_req_test(zpi)
     zpi_af_register_test(zpi)    
+
     zpi_zb_start_request_test(zpi)
     zpi_zb_get_device_info_test(zpi)    
     

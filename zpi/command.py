@@ -1621,7 +1621,8 @@ class ZpiCommands(object):
         b'\x67\x49':{ 
             'name': ZpiCommand.UTIL_ASSOC_FIND_DEVICE_SRSP,
             'structure':[
-                {'name': 'device',              'len': 18}, #contains sub-fields
+                # {'name': 'device',              'len': 18}, #contains sub-fields
+                {'name': 'device',              'len': 28},
                 ]
             },  
         b'\x67\x80':{ 

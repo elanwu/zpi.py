@@ -638,6 +638,7 @@ cmd1: c0
 /*********************************************************************
  * CONSTANTS
  */
+HHBBBBBBBBLHBLLB
 
 #define NVINDEX_NOT_FOUND   0xFFFF
 #define NVINDEX_THIS_DEVICE 0xFFFE
@@ -698,7 +699,7 @@ root@d8:/home/elan/repo/zpi.py/zpi/test#
 
 
 
-2016-08-25 09:27:14:  CMD, IND, 45CA
+2016-08-25 09:27:14:  CMD, IND, 45CA(45ca)
 	if you encount cmd 0x45CA without discription in document "CC2530ZNP_Interface_Specifacation.pdf":
 	https://e2e.ti.com/support/wireless_connectivity/zigbee_6lowpan_802-15-4_mac/f/158/t/406701
 	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

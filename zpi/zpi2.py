@@ -2282,7 +2282,8 @@ class Zpi(Znp):
     def _util_assoc_find_device_srsp_handler(self, rx_data):
         """ handler for UTIL_ASSOC_FIND_DEVICE srsp"""
         if rx_data['id'] == ZpiCommand.UTIL_ASSOC_FIND_DEVICE_SRSP:
-            device_unpacked = struct.unpack('<HHBBBBBBBBLH', rx_data['device'])
+            # device_unpacked = struct.unpack('<HHBBBBBBBBLH', rx_data['device'])
+            device_unpacked = struct.unpack('<HHBBBBBBBBLHBLLB', rx_data['device'])
             device = {}
             attr_index = 0
             for attr_name in AssociatedDevice.attr_names:
